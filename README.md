@@ -22,33 +22,35 @@ The **Money Tracker** is a web application that helps you manage your finances b
     "price": -200
   }
   ```
-- name: The name of the transaction (e.g., "Grocery shopping").
-- description: A short description of the transaction.
-- datetime: The date and time the transaction took place.
-- price: The amount of the transaction (positive for income, negative for expenses).
+  ### Transaction Model
 
-### 2. View all transactions
--**Endpoint**: GET /api/transactions
--**Purpose**: Retrieve a list of all transactions added to the tracker.
--**Response**- 
+- **name**: The name of the transaction (e.g., "Grocery shopping").
+- **description**: A short description of the transaction.
+- **datetime**: The date and time the transaction took place.
+- **price**: The amount of the transaction (positive for income, negative for expenses).
+
+---
+
+### View All Transactions
+
+- **Endpoint**: `GET /api/transactions`
+- **Purpose**: Retrieve a list of all transactions added to the tracker.
+- **Response**:
   ```json
-    [
-  {
-    "_id": "abc123",
-    "name": "Grocery shopping",
-    "description": "Bought vegetables and fruits",
-    "datetime": "2024-01-16T14:00:00",
-    "price": -200
-  },
-  {
-    "_id": "def456",
-    "name": "Freelance Work",
-    "description": "Payment for project",
-    "datetime": "2024-01-15T10:00:00",
-    "price": 500
-  }
-]
-
+  [
+    {
+      "name": "Grocery shopping",
+      "description": "Bought groceries",
+      "datetime": "2025-01-15T08:30:00",
+      "price": -50.00
+    },
+    {
+      "name": "Freelance work",
+      "description": "Payment for freelance project",
+      "datetime": "2025-01-14T15:00:00",
+      "price": 200.00
+    }
+  ]
   ```
 
 ### View Current Balance
