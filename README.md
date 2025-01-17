@@ -1,74 +1,73 @@
-<<<<<<< HEAD
-# Money_Tracker
-=======
-# Getting Started with Create React App
+# Money Tracker - Expense Tracker API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The **Money Tracker** is a web application that helps you manage your finances by tracking your income and expenses, all in one place. It allows you to view your transaction history, track your balance, and add new transactions. Built with Node.js, Express, and MongoDB, this project offers a simple yet powerful way to monitor your financial activity.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Track Balance**: The balance is automatically updated whenever a new transaction is added, reflecting both your income and expenses.
+- **View Transactions**: Retrieve and display all past transactions along with their details, including price, description, and date.
+- **Add New Transactions**: Post new transactions with detailed information such as transaction name, price, description, and date.
 
-### `yarn start`
+## Functions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. Add New Transaction
+- **Endpoint**: `POST /api/transaction`
+- **Purpose**: Add a new transaction to the tracker. Transactions can be either income (positive value) or expenses (negative value).
+- **Request Body**:
+  ```json
+  {
+    "name": "Transaction Name",
+    "description": "Transaction Description",
+    "datetime": "2024-01-16T14:00:00",
+    "price": -200
+  }
+  ```
+- name: The name of the transaction (e.g., "Grocery shopping").
+- description: A short description of the transaction.
+- datetime: The date and time the transaction took place.
+- price: The amount of the transaction (positive for income, negative for expenses).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2. View all transactions
+-**Endpoint**: GET /api/transactions
+-**Purpose**: Retrieve a list of all transactions added to the tracker.
+-**Response**- 
+  ```json
+    [
+  {
+    "_id": "abc123",
+    "name": "Grocery shopping",
+    "description": "Bought vegetables and fruits",
+    "datetime": "2024-01-16T14:00:00",
+    "price": -200
+  },
+  {
+    "_id": "def456",
+    "name": "Freelance Work",
+    "description": "Payment for project",
+    "datetime": "2024-01-15T10:00:00",
+    "price": 500
+  }
+]
 
-### `yarn test`
+  ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### View Current Balance
 
-### `yarn build`
+- **Purpose**: The current balance is automatically calculated by summing the price of all transactions. Positive values (income) increase the balance, while negative values (expenses) decrease it. This feature is implemented in the `GET /api/transactions` endpoint, which returns all transactions along with the balance calculation.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Technologies Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Node.js**: JavaScript runtime for building the server.
+- **Express.js**: Web framework to create the API.
+- **MongoDB**: NoSQL database for storing transactions.
+- **Mongoose**: ODM (Object Document Mapper) for interacting with MongoDB.
+- **CORS**: Middleware for enabling cross-origin requests.
+- **dotenv**: A module to manage environment variables.
 
-### `yarn eject`
+--
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Enjoy tracking your expenses and managing your finances with Money Tracker!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> 2ed3a7d (Initialize project using Create React App)
