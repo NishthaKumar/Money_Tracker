@@ -68,7 +68,7 @@ The **Money Tracker** is a web application that helps you manage your finances b
 - **CORS**: Middleware for enabling cross-origin requests.
 - **dotenv**: A module to manage environment variables.
 
---
+---
 
 Enjoy tracking your expenses and managing your finances with Money Tracker!
 
